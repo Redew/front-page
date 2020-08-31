@@ -6,11 +6,14 @@
 .newsCont {
     max-width: 2000px;
     margin: 0 auto;
+    border: 1px solid black;
+    text-align: center;
 }
 
 .newsCont h1, .newsCont i {
     color: #fff;
     margin: 0 auto;
+    text-align: left;
 }
 
 .newsCont i {
@@ -21,9 +24,16 @@
     max-width: 2000px;
     width: 95%;
     margin: 30px auto 0 auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    align-items: center;
+    display: inline-block;
+    border: 1px solid red;
+}
+
+.newsGrid > div:first-child {
+    border: 4px solid yellow;
+    max-width: 65%;
+    
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .shadow {
@@ -32,22 +42,29 @@
     max-width: 600px;
 }
 
+.twitter {
+    display: inline-block;
+    vertical-align: middle;
+    width: 30%;
+    margin-left: 50px;
+}
+
 .articleCont {
     display: grid;
-    grid-template: repeat(auto-fill, [col-start] minmax(300px, 1fr) [col-end]) / repeat(auto-fill, [col-start] minmax(400px, 1fr) [col-end]);
+    grid-template: /* row / column */repeat(2, minmax(200px, 425px)) / repeat(2, minmax(200px, 500px));
     gap: 50px;
-    width: 95%;
+    width: 100%;
     height: 100%;
-    justify-items: center;
+    justify-content: center;
 }
 
 .articleCard {
     width: 100%;
     height: 100%;
     min-width: 250px;
-    max-width: 500px;
-    min-height: 300px;
+    min-height: 250px;
     border-radius: 10px;
+    display: inline-block;
 }
 
 .articleCard > div:first-child {
@@ -72,6 +89,7 @@
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    text-align: left;
 }
 
 .articleCard span {
@@ -99,3 +117,52 @@
 .tags {
     font-style: italic;
 }
+
+@media(max-width: 1450px){
+    .newsGrid {
+        width: 100%;
+    }
+    .articleCont {
+        grid-template: repeat(auto-fill, minmax(200px, 290px)) / repeat(auto-fill, minmax(200px, 325px));
+        max-width: 700px;
+        gap: 20px;
+    }
+    .twitter {
+        height: 570px;
+        overflow: hidden;
+        margin-left: 20px;
+    }
+    .center {
+        font-size: .9em;
+    }
+  }
+
+  @media(max-width: 1050px){
+    .news {
+        padding: 10px;
+    }
+
+    .articleCont {
+        border: 1px solid red;
+    }
+
+    .newsGrid > div:first-child {
+        justify-content: center;
+    }
+
+    .newsCont h1 {
+        text-align: center;
+        font-size: 40px;
+    }
+
+    .twitter {
+        width: 70%;
+        overflow: hidden;
+        margin: 20px auto 0 auto;
+    }
+
+    .center {
+        font-size: .7em;
+    }
+
+  }
