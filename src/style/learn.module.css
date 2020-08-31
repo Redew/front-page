@@ -19,7 +19,7 @@
 
 .cardGrid {
     display: grid;
-    grid-template: repeat(auto-fill, minmax(350px, 410px)) / repeat(auto-fill, minmax(220px, 280px));
+    grid-template: repeat(auto-fill, minmax(350px, 410px)) / repeat(4, minmax(220px, 280px));
     justify-content: center;
     margin: 30px auto 0 auto;
     gap: 50px;
