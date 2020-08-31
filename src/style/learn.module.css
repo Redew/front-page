@@ -19,15 +19,14 @@
 
 .cardGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, [col-start] minmax(300px, 1fr) [col-end]);
-    justify-items: center;
+    grid-template: repeat(auto-fill, minmax(350px, 410px)) / repeat(auto-fill, minmax(220px, 280px));
+    justify-content: center;
     margin: 30px auto 0 auto;
-    gap: 20px;
+    gap: 50px;
+    width: 90%;
 }
 
 .card {
-    width: 65%;
-    min-width: 220px;
     background-color: #463a5c;
     border-radius: 30px;
     display: inline-block;
@@ -94,4 +93,46 @@
     box-shadow: 0 1px 2px 2px #000;
     border-radius: 20px;
     max-width: 600px;
+}
+
+@media screen and (max-width: 1650px) {
+    .cardGrid {
+        grid-template-columns: repeat(2, 300px);
+    }
+}
+
+@media screen and (max-width: 1050px){
+    .cardGrid {
+        grid-template: 150px / 600px;
+        text-align: center;
+        
+    }
+    .card {
+        background-color: #463a5c;
+        border-radius: 30px;
+        color: #fff;
+        padding: 10px 0;
+        display: inline-block;
+    }
+    .title, .desc {
+        display: none;
+    }
+    .vector > i {
+        margin-top: 22px;
+    }
+    .vector {
+        height: 125px;
+        width: 125px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 30px;
+    }
+    .viewSelection {
+        width: 60%;
+        height: 80px;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 2em;
+        line-height: 2.5em;
+    }
 }
